@@ -75,8 +75,8 @@ def install_repositories():
     log.info('Installing lite-kext')
     os.makedirs(os.path.join(os.path.dirname(__file__), 'sd'), exist_ok=True)
     lite_diffusion_repo = os.environ.get('LITE_KEXT_REPO', "https://github.com/AUTOMATIC1111/stable-diffusion-webui.git")
-    lite_diffusion_commit = os.environ.get('LITE_KEXT_REPO_COMMIT_HASH', "5ab7f213bec2f816f9c5644becb32eb72c8ffb89")
-    clone(lite_diffusion_repo, d('lite-kext'), lite_diffusion_commit)
+    #lite_diffusion_commit = os.environ.get('LITE_KEXT_REPO_COMMIT_HASH', "5ab7f213bec2f816f9c5644becb32eb72c8ffb89")
+    clone(lite_diffusion_repo, d('lite-kext'))
 
 # set environment variables controling the behavior of various libraries
 def set_environment():
