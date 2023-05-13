@@ -57,10 +57,10 @@ def git(arg: str, folder: str = None, ignore: bool = False):
 def clone(url, folder, commithash=None):
     if os.path.exists(folder):
         if commithash is None:
-            return
+            git('fetch', folder)
         current_hash = git('rev-parse HEAD', folder).strip()
         if current_hash != commithash:
-            git('pull', folder)
+            git('fetch', folder)
             git(f'checkout {commithash}', folder)
             return
     else:
